@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离线 Offline — 大师兄投资哲学</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f0eb;
+      color: #2c2c2c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+    .offline-card {
+      background: white;
+      border-radius: 16px;
+      padding: 48px 32px;
+      max-width: 400px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .offline-icon { font-size: 64px; margin-bottom: 16px; }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    p { color: #666; margin-bottom: 24px; line-height: 1.6; }
+    .retry-btn {
+      background: #B8860B;
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .retry-btn:hover { opacity: 0.9; }
+    .quote { font-style: italic; color: #888; font-size: 14px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="offline-card">
+    <div class="offline-icon">📡</div>
+    <h1>你目前处于离线状态</h1>
+    <p>这个页面还没有被缓存。在联网时先访问一次，之后就可以离线使用了。</p>
+    <p style="font-size: 14px; color: #888;">This page hasn't been cached yet. Visit it once while online, and it'll be available offline next time.</p>
+    <button class="retry-btn" onclick="location.reload()">重试 Try Again</button>
+    <p class="quote">「长期持有，耐心等待」—— 大师兄</p>
+  </div>
+</body>
+</html>

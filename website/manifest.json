@@ -1,0 +1,41 @@
+{
+  "name": "大师兄投资哲学学习路径 | Dashixiong Investment Philosophy",
+  "short_name": "大师兄课程",
+  "description": "A bilingual study companion for understanding investment philosophy, economics, ETFs, gold, and long-term investing frameworks.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#B8860B",
+  "background_color": "#f5f0eb",
+  "categories": ["education", "finance"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
