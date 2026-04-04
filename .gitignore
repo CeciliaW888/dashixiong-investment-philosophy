@@ -22,10 +22,8 @@ npm-debug.log*
 *.temp
 .cache/
 
-# Build outputs (website/index.html is generated)
-website/index.html
-
 # Personal notes (if any)
 NOTES-PERSONAL.md
 TODO-PERSONAL.md
 CLAUDE.md
+.claude/worktrees/

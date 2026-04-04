@@ -104,7 +104,7 @@ a:hover { color: var(--color-accent-hover); }
 
 /* ---------- 3. Navigation ---------- */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: sticky; top: 0;
   height: var(--nav-height); background: var(--bg-card);
   border-bottom: 1px solid var(--border); z-index: 100;
 }
@@ -144,6 +144,14 @@ a:hover { color: var(--color-accent-hover); }
 .module h2 { font-family: var(--font-heading); font-size: var(--text-3xl); margin-bottom: var(--space-6); }
 .module h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin-top: var(--space-8); margin-bottom: var(--space-4); }
 .module h4 { font-size: var(--text-xl); margin-top: var(--space-6); margin-bottom: var(--space-3); }
+
+/* Embedded modules (inside tab layout) — override full-viewport height */
+.module-embedded, .section .module { min-height: auto; padding: var(--space-8) var(--space-4); }
+.module-embedded .module-inner, .section .module .module-inner { max-width: 100%; }
+
+/* Quiz inline explanation (for data-correct="INDEX" pattern) */
+.quiz-explanation-inline { margin-top: var(--space-3); padding: var(--space-3); background: var(--bg-hover); border-radius: var(--radius-sm); font-size: var(--text-sm); line-height: 1.5; }
+.quiz-card.answered .quiz-option { pointer-events: none; cursor: default; }
 
 /* ---------- 5. Install Banner ---------- */
 .install-banner {
@@ -197,8 +205,8 @@ a:hover { color: var(--color-accent-hover); }
 .copy-btn { background: none; border: none; cursor: pointer; font-size: 14px; color: #ccc; }
 .copy-btn:hover { color: white; }
 
-pre { margin: 0; padding: var(--space-4); background: var(--bg-code); overflow-x: auto; }
-code { font-family: var(--font-code); font-size: var(--text-sm); white-space: pre-wrap; word-break: break-word; }
+pre { margin: 0; padding: var(--space-4); background: var(--bg-code); color: #e0def4; overflow-x: auto; }
+code { font-family: var(--font-code); font-size: var(--text-sm); color: inherit; white-space: pre-wrap; word-break: break-word; }
 
 .code-explanation { padding: var(--space-3) var(--space-4); background: var(--bg-hover); font-size: var(--text-sm); border-top: 1px solid var(--border); }
 .try-it { padding: var(--space-3) var(--space-4); background: #fef9c3; font-size: var(--text-sm); }
@@ -254,7 +262,7 @@ code { font-family: var(--font-code); font-size: var(--text-sm); white-space: pr
 
 /* ---------- 13. Chat Animation ---------- */
 .chat-window { background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; margin: var(--space-6) 0; }
-.chat-messages { padding: var(--space-4); min-height: 200px; display: flex; flex-direction: column; gap: var(--space-3); }
+.chat-messages { padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
 .chat-message {
   max-width: 80%; padding: var(--space-3) var(--space-4);
   border-radius: 16px; font-size: var(--text-sm); line-height: 1.5;

@@ -153,3 +153,4 @@ open index.html
 **开始你的学习之旅：** [Day 1: 大师兄的投资哲学全景](week-01/day-01-why-economics.md) →
 
 **当前进度：** Week 1 完成 ✅ | Week 2-3 开发中 🚧
+

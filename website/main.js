@@ -306,6 +306,31 @@
     });
   }
 
+  /* Index-based quiz: data-correct="INDEX" on .quiz-card, data-explanation-N per option */
+  function initIndexQuizzes() {
+    document.querySelectorAll('.quiz-card[data-correct]').forEach(function (card) {
+      var correctIdx = parseInt(card.dataset.correct, 10);
+      if (isNaN(correctIdx) || card.classList.contains('index-quiz-init')) return;
+      card.classList.add('index-quiz-init');
+      var options = card.querySelectorAll('.quiz-option');
+      options.forEach(function (btn, idx) {
+        btn.addEventListener('click', function () {
+          if (card.classList.contains('answered')) return;
+          card.classList.add('answered');
+          btn.classList.add(idx === correctIdx ? 'correct' : 'incorrect');
+          if (idx !== correctIdx && options[correctIdx]) options[correctIdx].classList.add('correct');
+          var explanation = card.getAttribute('data-explanation-' + idx);
+          if (explanation) {
+            var expDiv = document.createElement('div');
+            expDiv.className = 'quiz-explanation-inline';
+            expDiv.textContent = (idx === correctIdx ? '\u2705 ' : '\u274c ') + explanation;
+            card.appendChild(expDiv);
+          }
+        });
+      });
+    });
+  }
+
   /* ------------------------------------------------------------------
      5. FLASHCARD ENGINE
      ------------------------------------------------------------------ */
@@ -484,13 +509,15 @@
      ------------------------------------------------------------------ */
   function initChatWindows() {
     document.querySelectorAll('.chat-window').forEach(function (win) {
+      if (win.dataset.initialized) return; // Skip already initialized windows
+      win.dataset.initialized = 'true';
       var messages = Array.from(win.querySelectorAll('[data-msg]'));
       messages.sort(function (a, b) { return (+a.dataset.msg) - (+b.dataset.msg); });
       var currentMsg = 0;
 
       messages.forEach(function (m) { m.style.display = 'none'; });
 
-      var typingEl = win.querySelector('.typing-indicator');
+      var typingEl = win.querySelector('.chat-typing, .typing-indicator');
 
       function showTyping(sender) {
         if (!typingEl) return;
@@ -540,6 +567,14 @@
       if (resetBtn) resetBtn.addEventListener('click', resetChat);
 
       hideTyping();
+
+      // Auto-start animation after brief delay
+      setTimeout(function autoPlay() {
+        if (currentMsg < messages.length) {
+          showNext();
+          setTimeout(autoPlay, 1500); // Next message after 1.5s
+        }
+      }, 1000);
     });
   }
 
@@ -857,6 +892,7 @@
     initAnimations();
     initGlossary();
     initQuizzes();
+    initIndexQuizzes();
     initFlashcards();
     initDragDrop();
     initChatWindows();
@@ -872,4 +908,7 @@
   } else {
     init();
   }
+
+  // Expose initChatWindows globally for lazy-loaded modules
+  window.initChatWindows = initChatWindows;
 })();

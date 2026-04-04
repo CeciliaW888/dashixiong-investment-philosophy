@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大师兄投资哲学</title>
+  <meta name="description" content="跟随大师兄学习投资哲学 — 从经济学底层逻辑到实战策略的7天课程">
+  <meta name="theme-color" content="#8b5e3c">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="大师兄投资">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Framework CSS (for interactive module elements) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ── Accent palette ── */
+    :root {
+      /* Tab layout vars */
+      --accent:       #8b5e3c;
+      --accent-hover: #7a5235;
+      --accent-light: #f3e8dc;
+      --accent-muted: #faf5f0;
+      /* styles.css compat: module files use --color-accent-* and --color-text-* */
+      --color-accent:       #8b5e3c;
+      --color-accent-hover: #7a5235;
+      --color-accent-light: #f3e8dc;
+      --color-accent-muted: #faf5f0;
+      --color-text-secondary: #6b5c52;
+      --color-text-muted: #9e8e84;
+      --color-surface: #ffffff;
+      --color-border: #e8e0d8;
+
+      --cream: #f5f0eb; --white: #ffffff; --border: #e8e0d8;
+      --shadow: rgba(0,0,0,0.08); --text-primary: #2c2420;
+      --text-secondary: #6b5c52; --text-muted: #9e8e84;
+      --radius: 12px; --max-w: 860px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream: #1a1614; --white: #242220; --border: #3a3430;
+        --shadow: rgba(0,0,0,0.3); --text-primary: #e8e0d8;
+        --text-secondary: #a09890; --text-muted: #706860;
+      }
+      .hero { background: linear-gradient(135deg, var(--cream) 0%, #221e1a 100%) !important; }
+    }
+
+    /* Font overrides for Chinese */
+    h1,h2,h3{font-family:'Noto Serif SC',serif;}
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.6; }
+
+    /* ── Tab Nav ── */
+    .tab-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 4px var(--shadow); }
+    .tab-nav-inner { max-width: var(--max-w); margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; }
+    .tab-nav-inner::-webkit-scrollbar { display: none; }
+    .tab-btn { flex-shrink: 0; padding: 14px 20px; border: none; background: none; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+    .tab-btn:hover { color: var(--text-primary); }
+    .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+    /* ── Layout ── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    .section { display: none; padding: 32px 0 64px; }
+    .section.active { display: block; }
+    .section-heading { font-family: 'Noto Serif SC', serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+
+    /* ── Hero ── */
+    .hero { background: linear-gradient(135deg, var(--cream) 0%, color-mix(in srgb, var(--accent) 8%, var(--cream)) 100%); padding: 48px 20px 40px; text-align: center; }
+    .hero-emoji { font-size: 3.5rem; margin-bottom: 16px; }
+    .hero h1 { font-family: 'Noto Serif SC', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; margin-bottom: 12px; }
+    .hero-subtitle { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 20px; }
+    .hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 24px; }
+    .hero-tag { background: var(--accent-light); color: var(--accent); border: 1px solid var(--accent-light); border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; font-weight: 500; }
+    .install-btn-hero { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 10px 24px; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: none; transition: background 0.2s; }
+    .install-btn-hero:hover { background: var(--accent-hover); }
+    .install-btn-hero.visible { display: inline-block; }
+
+    /* ── Progress Card ── */
+    .progress-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); padding: 24px; margin: 24px 20px 0; max-width: var(--max-w); margin-inline: auto; }
+    .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .progress-header h3 { font-size: 1rem; font-weight: 600; }
+    .progress-count { color: var(--text-secondary); font-size: 0.9rem; }
+    .progress-track { height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--accent); border-radius: 3px; width: 0%; transition: width 0.4s ease; }
+    .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 12px; }
+    .day-dot { aspect-ratio: 1; border-radius: 8px; background: var(--cream); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: var(--text-muted); transition: all 0.2s; position: relative; }
+    .day-dot:hover { transform: scale(1.1); border-color: var(--accent); }
+    .day-dot.done { background: var(--accent); border-color: var(--accent); color: white; }
+    .day-dot.done::after { content: '✓'; font-size: 16px; position: absolute; }
+    .day-dot.done > span { visibility: hidden; }
+    .week-labels { display: flex; gap: 6px; }
+    .week-labels span { flex: 1; font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: 2px 0; }
+
+    /* ── Curriculum Cards ── */
+    .week-section { margin-bottom: 32px; }
+    .week-section h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); color: var(--accent); }
+    .day-card { background: var(--white); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 8px; overflow: hidden; }
+    .day-card-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; cursor: pointer; user-select: none; transition: background 0.15s; }
+    .day-card-header:hover { background: var(--accent-muted); }
+    .day-card-title { font-weight: 600; font-size: 0.95rem; }
+    .day-card-meta { display: flex; align-items: center; gap: 10px; }
+    .day-type { font-size: 0.75rem; padding: 2px 8px; border-radius: 10px; font-weight: 500; }
+    .type-foundations { background: #d1fae5; color: #065f46; }
+    .type-concepts   { background: #fef3c7; color: #92400e; }
+    .type-advanced   { background: #ffe4e6; color: #9f1239; }
+    .type-project    { background: #ede9fe; color: #5b21b6; }
+    .type-review     { background: #e0f2fe; color: #075985; }
+    .chevron { font-size: 0.8rem; color: var(--text-muted); transition: transform 0.2s; }
+    .day-card.open .chevron { transform: rotate(180deg); }
+    .day-card-body { display: none; padding: 0 18px 16px; border-top: 1px solid var(--border); }
+    .day-card.open .day-card-body { display: block; }
+    .day-card-body ul { margin: 12px 0 12px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; }
+    .day-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.875rem; font-weight: 600; text-decoration: none; padding: 6px 0; }
+    .day-link:hover { text-decoration: underline; }
+
+    /* ── Module overrides (embedded in tab, not full-viewport) ── */
+    .module { min-height: auto !important; padding: 32px 0; border-bottom: 1px solid var(--border); }
+    .module-inner { max-width: 100%; }
+    pre { color: #e0def4; }
+    code { color: inherit; }
+
+    /* ── Flashcards ── */
+    .flashcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .fc { perspective: 800px; height: 180px; cursor: pointer; }
+    .fc-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; }
+    .fc.flipped .fc-inner { transform: rotateY(180deg); }
+    .fc-front, .fc-back { position: absolute; inset: 0; border-radius: var(--radius); border: 1px solid var(--border); padding: 20px; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; }
+    .fc-front { background: var(--white); }
+    .fc-back { background: var(--accent); color: white; transform: rotateY(180deg); }
+    .fc-term { font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; }
+    .fc-hint { font-size: 0.8rem; color: var(--text-muted); margin-top: auto; }
+
+    /* ── Quiz ── */
+    .quiz-block { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); padding: 24px; margin-bottom: 20px; }
+    .quiz-q { font-weight: 600; margin-bottom: 16px; line-height: 1.5; }
+    .quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+    .quiz-opt { background: var(--cream); border: 2px solid var(--border); border-radius: 8px; padding: 10px 16px; text-align: left; cursor: pointer; transition: all 0.15s; font-size: 0.9rem; }
+    .quiz-opt:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-muted); }
+    .quiz-opt.correct { border-color: #10b981; background: #d1fae5; color: #065f46; }
+    .quiz-opt.wrong   { border-color: #ef4444; background: #fee2e2; color: #991b1b; }
+    .quiz-explanation { margin-top: 12px; padding: 12px; background: var(--accent-muted); border-radius: 8px; font-size: 0.875rem; display: none; }
+    .quiz-explanation.visible { display: block; }
+
+    /* ── Diagrams ── */
+    .diagram-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .diagram-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .diagram-card img { width: 100%; height: 200px; object-fit: contain; background: white; padding: 12px; }
+    .diagram-label { padding: 12px 16px; font-weight: 600; font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+    /* ── Resources ── */
+    .resource-group { margin-bottom: 32px; }
+    .resource-group h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+    .resource-link { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: opacity 0.15s; }
+    .resource-link:hover { opacity: 0.75; }
+    .resource-link:last-child { border-bottom: none; }
+    .resource-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .resource-text strong { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+    .resource-text span { font-size: 0.85rem; color: var(--text-secondary); }
+
+    /* ── Utility ── */
+    .empty-state { text-align: center; padding: 48px 20px; color: var(--text-muted); }
+  </style>
+
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- ── Tab Nav ── -->
+<nav class="tab-nav" aria-label="课程导航">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active" data-tab="curriculum"  id="tab-curriculum">📋 课程大纲</button>
+    <button class="tab-btn"        data-tab="modules"     id="tab-modules">📖 学习内容</button>
+    <button class="tab-btn"        data-tab="diagrams"    id="tab-diagrams">🗺 图解</button>
+    <button class="tab-btn"        data-tab="flashcards"  id="tab-flashcards">🃏 闪卡</button>
+    <button class="tab-btn"        data-tab="quiz"        id="tab-quiz">✅ 测验</button>
+    <button class="tab-btn"        data-tab="resources"   id="tab-resources">🔗 资源</button>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-emoji">📈</div>
+  <h1>大师兄投资哲学</h1>
+  <p class="hero-subtitle">从经济学底层逻辑到投资实战 — 7天系统学习</p>
+  <div class="hero-tags">
+    <span class="hero-tag">经济学基础</span>
+    <span class="hero-tag">货币理论</span>
+    <span class="hero-tag">投资哲学</span>
+    <span class="hero-tag">7天课程</span>
+  </div>
+  <button class="install-btn-hero" id="install-btn-hero">📲 安装应用</button>
+</div>
+
+<!-- ── Progress Card ── -->
+<div class="progress-card">
+  <div class="progress-header">
+    <h3>学习进度</h3>
+    <span class="progress-count" id="progress-text">0 / 7 天</span>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="day-grid" id="day-grid"></div>
+  <div class="week-labels"><span>Day 1</span><span>Day 2</span><span>Day 3</span><span>Day 4</span><span>Day 5</span><span>Day 6</span><span>Day 7</span></div>
+</div>
+
+<main>
+
+  <!-- ── 1. Curriculum ── -->
+  <section class="section active container" id="section-curriculum" aria-labelledby="tab-curriculum">
+    <h2 class="section-heading">课程大纲</h2>
+
+    <div class="week-section">
+      <h3>📅 第一周：经济学底层逻辑</h3>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 1: 大师兄的投资哲学全景</span>
+          <div class="day-card-meta">
+            <span class="day-type type-foundations">基础</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>理解「先学后投」的核心理念</li>
+            <li>掌握「底层逻辑」概念</li>
+            <li>了解大师兄投资体系全貌</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 2: 历史定价权与经济周期</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>学习历史定价权的演变</li>
+            <li>理解经济周期的底层驱动力</li>
+            <li>从历史中看投资逻辑</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 3: 大航海时代与全球贸易</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>大航海时代的经济影响</li>
+            <li>全球贸易体系的形成</li>
+            <li>贸易与财富积累的关系</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 4: 资本与政府的博弈</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>资本与政府权力的关系</li>
+            <li>政策对市场的影响机制</li>
+            <li>投资者如何应对政策变化</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 5: 奥派 vs 凯恩斯</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>奥地利学派核心思想</li>
+            <li>凯恩斯主义的逻辑框架</li>
+            <li>两大学派对投资的启示</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 6: 货币扩张与通胀</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>货币供应与通胀的关系</li>
+            <li>央行政策对资产价格的影响</li>
+            <li>通胀环境下的投资策略</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 7: 第一周复盘</span>
+          <div class="day-card-meta">
+            <span class="day-type type-review">复习</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>回顾本周核心概念</li>
+            <li>知识点串联与总结</li>
+            <li>自测与反思</li>
+          </ul>
+          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 2. Learning Content ── -->
+  <section class="section container" id="section-modules" aria-labelledby="tab-modules">
+    <div id="modules-container"></div>
+    <div class="empty-state" id="modules-loading">加载中…</div>
+  </section>
+
+  <!-- ── 3. Diagrams ── -->
+  <section class="section container" id="section-diagrams" aria-labelledby="tab-diagrams">
+    <h2 class="section-heading">图解</h2>
+    <div class="diagram-grid" id="diagram-grid"></div>
+  </section>
+
+  <!-- ── 4. Flashcards ── -->
+  <section class="section container" id="section-flashcards" aria-labelledby="tab-flashcards">
+    <h2 class="section-heading">闪卡</h2>
+    <div class="flashcard-grid" id="flashcard-grid"><p class="empty-state">加载中…</p></div>
+  </section>
+
+  <!-- ── 5. Quiz ── -->
+  <section class="section container" id="section-quiz" aria-labelledby="tab-quiz">
+    <h2 class="section-heading">知识测验</h2>
+    <div id="quiz-container"><p class="empty-state">加载中…</p></div>
+  </section>
+
+  <!-- ── 6. Resources ── -->
+  <section class="section container" id="section-resources" aria-labelledby="tab-resources">
+    <h2 class="section-heading">学习资源</h2>
+    <div class="resource-group">
+      <h3>📚 推荐阅读</h3>
+      <a class="resource-link" href="https://github.com/CeciliaW888/dashixiong-investment-philosophy" target="_blank">
+        <span class="resource-icon">📂</span>
+        <div class="resource-text">
+          <strong>课程 GitHub 仓库</strong>
+          <span>查看源代码、Markdown 笔记和课程资料</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ── Configuration ── */
+const DAY_COUNT    = 7;
+const MODULE_FILES = ['modules/01-why-economics.html','modules/02-historical-pricing.html','modules/03-great-navigation.html','modules/04-capital-government.html','modules/05-austrian-vs-keynesian.html','modules/06-monetary-expansion.html','modules/07-week1-review.html'];
+const DIAGRAM_FILES = [];
+const STORAGE_KEY  = 'dashixiong-investment-progress';
+
+/* ── Tab switching ── */
+const tabs     = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('.section');
+let modulesLoaded = false;
+
+tabs.forEach(btn => {
+  btn.addEventListener('click', async () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('section-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'modules'    && !modulesLoaded) { await loadModules(); modulesLoaded = true; }
+    if (btn.dataset.tab === 'flashcards') loadFlashcards();
+    if (btn.dataset.tab === 'quiz')       loadQuiz();
+    if (btn.dataset.tab === 'diagrams')   renderDiagrams();
+  });
+});
+
+/* ── Day grid + progress ── */
+function buildDayGrid() {
+  const grid = document.getElementById('day-grid');
+  const done = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  for (let i = 1; i <= DAY_COUNT; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'day-dot' + (done.includes(i) ? ' done' : '');
+    const span = document.createElement('span');
+    span.textContent = i;
+    dot.appendChild(span);
+    dot.title = '第 ' + i + ' 天';
+    dot.addEventListener('click', () => toggleDay(i, dot));
+    grid.appendChild(dot);
+  }
+  updateProgress(done.length);
+}
+function toggleDay(n, el) {
+  const done = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  const idx = done.indexOf(n);
+  if (idx === -1) done.push(n); else done.splice(idx, 1);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(done));
+  el.classList.toggle('done');
+  updateProgress(done.length);
+}
+function updateProgress(count) {
+  document.getElementById('progress-text').textContent = count + ' / ' + DAY_COUNT + ' 天';
+  document.getElementById('progress-fill').style.width = (count / DAY_COUNT * 100) + '%';
+}
+buildDayGrid();
+
+/* ── Curriculum card toggle ── */
+document.querySelectorAll('.day-card-header').forEach(h => {
+  h.addEventListener('click', () => h.closest('.day-card').classList.toggle('open'));
+});
+
+/* ── Lazy-load modules ── */
+async function loadModules() {
+  const container = document.getElementById('modules-container');
+  const loading   = document.getElementById('modules-loading');
+  for (const file of MODULE_FILES) {
+    try {
+      const resp = await fetch(file);
+      if (resp.ok) {
+        const div = document.createElement('div');
+        div.innerHTML = await resp.text();
+        container.appendChild(div);
+      }
+    } catch(e) { console.warn('Failed to load', file); }
+  }
+  loading.style.display = 'none';
+  if (typeof initIndexQuizzes === 'function') initIndexQuizzes();
+  if (typeof initChatWindows === 'function') initChatWindows();
+  container.querySelectorAll('pre').forEach(pre => {
+    const btn = document.createElement('button');
+    btn.textContent = '复制'; btn.className = 'copy-btn-overlay';
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText((pre.querySelector('code') || pre).textContent);
+      btn.textContent = '已复制!';
+      setTimeout(() => { btn.textContent = '复制'; }, 2000);
+    });
+    pre.style.position = 'relative'; pre.appendChild(btn);
+  });
+}
+
+/* ── Flashcards ── */
+let flashcardsLoaded = false;
+async function loadFlashcards() {
+  if (flashcardsLoaded) return;
+  const grid = document.getElementById('flashcard-grid');
+  try {
+    const cards = await (await fetch('./data/flashcards.json')).json();
+    grid.innerHTML = '';
+    cards.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'fc';
+      el.innerHTML = `<div class="fc-inner">
+        <div class="fc-front"><div class="fc-term">${c.term}</div><div class="fc-hint">点击翻转</div></div>
+        <div class="fc-back"><div class="fc-term">${c.definition}</div></div>
+      </div>`;
+      el.addEventListener('click', () => el.classList.toggle('flipped'));
+      grid.appendChild(el);
+    });
+    flashcardsLoaded = true;
+  } catch(e) { grid.innerHTML = '<p class="empty-state">暂无闪卡 — 添加 data/flashcards.json</p>'; }
+}
+
+/* ── Quiz ── */
+let quizLoaded = false;
+async function loadQuiz() {
+  if (quizLoaded) return;
+  const container = document.getElementById('quiz-container');
+  const urls = MODULE_FILES.map((_, i) => `./data/quiz-${String(i+1).padStart(2,'0')}.json`);
+  let allQ = [];
+  for (const url of urls) {
+    try { const r = await fetch(url); if (r.ok) { const d = await r.json(); allQ = allQ.concat(d.questions || d); } } catch(e) {}
+  }
+  if (!allQ.length) { container.innerHTML = '<p class="empty-state">暂无测验 — 添加 data/quiz-01.json 等</p>'; return; }
+  container.innerHTML = '';
+  allQ.forEach((q, qi) => {
+    const block = document.createElement('div');
+    block.className = 'quiz-block';
+    const opts = q.options.map((o, oi) => `<button class="quiz-opt" data-idx="${oi}">${o}</button>`).join('');
+    block.innerHTML = `<div class="quiz-q">Q${qi+1}: ${q.question}</div><div class="quiz-opts">${opts}</div><div class="quiz-explanation"></div>`;
+    block.querySelectorAll('.quiz-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        block.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+        const correct = parseInt(btn.dataset.idx) === q.answer;
+        btn.classList.add(correct ? 'correct' : 'wrong');
+        if (!correct) block.querySelectorAll('.quiz-opt')[q.answer].classList.add('correct');
+        const exp = block.querySelector('.quiz-explanation');
+        exp.textContent = q.explanation || (correct ? '✓ 正确!' : '✗ 错误。');
+        exp.classList.add('visible');
+      });
+    });
+    container.appendChild(block);
+  });
+  quizLoaded = true;
+}
+
+/* ── Diagrams ── */
+function renderDiagrams() {
+  const grid = document.getElementById('diagram-grid');
+  if (grid.children.length > 0) return;
+  if (!DIAGRAM_FILES.length) { grid.innerHTML = '<p class="empty-state">暂无图解 — 添加 SVG 到 website/diagrams/</p>'; return; }
+  DIAGRAM_FILES.forEach(f => {
+    const label = f.replace(/.*\//, '').replace(/\.[^.]+$/, '').replace(/-/g, ' ');
+    grid.innerHTML += `<div class="diagram-card"><img src="${f}" alt="${label}" loading="lazy"><div class="diagram-label">${label}</div></div>`;
+  });
+}
+
+/* ── PWA install prompt ── */
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  document.getElementById('install-btn-hero').classList.add('visible');
+});
+document.getElementById('install-btn-hero').addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') document.getElementById('install-btn-hero').classList.remove('visible');
+  deferredPrompt = null;
+});
+
+/* ── Service worker ── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js').catch(console.warn);
+}
+</script>
+</body>
+</html>
