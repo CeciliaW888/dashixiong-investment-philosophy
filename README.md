@@ -19,48 +19,45 @@
 
 | 天数 | 主题 | 重点 |
 |-----|-------|-------|
-| 1 | 大师兄的投资哲学全景 | 底层逻辑方法论、三分法、长期持有 |
-| 2 | 历史型定价理论 | 钢笔案例、资本货币 vs 实物价值 |
-| 3 | 从大航海到冷战 | 扩张逻辑、郑和 vs 麦哲伦、NATO本质 |
-| 4 | 从亚伯拉罕到资本政府的1000年 | 三层结构崩塌、圈地运动、权钱结合 |
-| 5 | 奥地利学派 vs 凯恩斯主义 | Sound Money vs Fiat Money、债务陷阱 |
-| 6 | 货币宽松的千年演变 | 布雷顿森林崩溃、尼克松冲击、QE本质 |
-| 7 | Week 1复习 + 案例研讨 | 2008金融危机的底层逻辑分析 |
+| 1 | [大师兄的投资哲学全景](week-01/day-01-why-economics.md) | 底层逻辑方法论、三分法、长期持有 |
+| 2 | [历史型定价理论](week-01/day-02-historical-pricing.md) | 钢笔案例、资本货币 vs 实物价值 |
+| 3 | [从大航海到冷战](week-01/day-03-great-navigation.md) | 扩张逻辑、郑和 vs 麦哲伦、NATO本质 |
+| 4 | [从亚伯拉罕到资本政府的1000年](week-01/day-04-capital-government.md) | 三层结构崩塌、圈地运动、权钱结合 |
+| 5 | [奥地利学派 vs 凯恩斯主义](week-01/day-05-austrian-vs-keynesian.md) | Sound Money vs Fiat Money、债务陷阱 |
+| 6 | [货币宽松的千年演变](week-01/day-06-monetary-expansion.md) | 布雷顿森林崩溃、尼克松冲击、QE本质 |
+| 7 | [Week 1复习 + 案例研讨](week-01/day-07-week1-review.md) | 2008金融危机的底层逻辑分析 |
 
-### Week 2：投资框架与市场分析（第8-14天）🟡
-
-| 天数 | 主题 | 重点 |
-|-----|-------|-------|
-| 8 | ETF的本质 | Nathan Most vs Bogle、长期持有 vs 短线 |
-| 9 | 黄金的定价逻辑 | 定海神针理论、历史型定价应用 |
-| 10 | 石油与新能源的博弈 | 能源危机、俄乌冲突、地缘政治 |
-| 11 | 数字经济与数字货币 | 云计算、区块链、去中心化威胁 |
-| 12 | 三分法：大师兄的资产配置 | 风险管理、财富传承、组合构建 |
-| 13 | 估值案例分析 | 茅台、特斯拉、泡泡玛特深度拆解 |
-| 14 | Week 2复习 + 组合构建 | 用大师兄框架分析真实案例 |
-
-### Week 3：高级应用与整合思维（第15-21天）🔴
+### Week 2：投资框架与市场分析（第8-14天）🟢
 
 | 天数 | 主题 | 重点 |
 |-----|-------|-------|
-| 15 | 市场周期与资产负债表 | 修复期 vs 扩张期、政策传导 |
-| 16 | 长期持有的智慧 | 操盘手故事、SPDR案例、复利威力 |
-| 17 | 中美博弈与全球配置 | 技术霸权、脱钩真相、投资选择 |
-| 18 | 从阿根廷到日本 | 米莱改革、日本央行困局、货币主权 |
-| 19 | AI时代的投资逻辑 | 风口判断、主题ETF教训、底层逻辑 |
-| 20 | 金油汇债股数字货币 | 六大资产联动、未来三年预判 |
-| 21 | 终极框架整合 | 建立个人投资决策系统、毕业测试 |
+| 8 | [ETF的本质](week-02/day-08-etf-essentials.md) | Nathan Most vs Bogle、长期持有 vs 短线 |
+| 9 | [黄金的定价逻辑](week-02/day-09-gold-pricing.md) | 定海神针理论、五大矛盾体系 |
+| 10 | [石油与新能源的博弈](week-02/day-10-oil-new-energy.md) | 能源危机、俄乌冲突、地缘政治 |
+| 11 | [数字经济与数字货币](week-02/day-11-digital-economy.md) | 三类货币、区块链、去中心化威胁 |
+| 12 | [三分法：大师兄的资产配置](week-02/day-12-three-part-method.md) | 风险管理、财富传承、组合构建 |
+| 13 | [估值案例分析](week-02/day-13-valuation-cases.md) | 三大估值模型：黑盒子/混合/口碑消费型 |
+| 14 | [Week 2复习 + 组合构建](week-02/day-14-week2-review.md) | 用大师兄框架分析真实案例 |
+
+### Week 3：高级应用与整合思维（第15-21天）🟢
+
+| 天数 | 主题 | 重点 |
+|-----|-------|-------|
+| 15 | [市场周期与资产负债表](week-03/day-15-market-cycles.md) | 政策牛 vs 真牛、货币传导 |
+| 16 | [长期持有的智慧](week-03/day-16-long-term-holding.md) | 现金流检验、复利威力、守拙 |
+| 17 | [中美博弈与全球配置](week-03/day-17-china-us-dynamics.md) | 金融延展性、技术霸权、投资选择 |
+| 18 | [从阿根廷到日本](week-03/day-18-argentina-japan.md) | 依附的代价、米莱改革、货币主权 |
+| 19 | [AI时代的投资逻辑](week-03/day-19-ai-investment.md) | 康波理论、风口判断、底层逻辑 |
+| 20 | [金油汇债股数字货币](week-03/day-20-six-assets.md) | 六大资产联动、PQ=MV、现金流至上 |
+| 21 | [终极框架整合](week-03/day-21-final-framework.md) | 建立个人投资决策系统、毕业测试 |
 
 ## 🚀 开始学习
 
 ### 在线学习（PWA网站）
 
-打开课程网站 — 可安装为应用，支持离线：
-```bash
-cd website
-bash build.sh
-open index.html
-```
+课程网站已构建完成，可直接部署到 GitHub Pages 或任何静态托管服务。支持安装为应用，支持离线访问。
+
+**部署方式：** 将 `website/` 目录部署为 GitHub Pages（Settings → Pages → Source 选择 `main` 分支，目录选 `/website`）。
 
 ### 本地阅读
 
@@ -79,8 +76,22 @@ open index.html
 │   ├── day-05-austrian-vs-keynesian.md
 │   ├── day-06-monetary-expansion.md
 │   └── day-07-week1-review.md
-├── week-02/                    # 投资框架（待完成）
-├── week-03/                    # 实战应用（待完成）
+├── week-02/                    # 投资框架与市场分析
+│   ├── day-08-etf-essentials.md
+│   ├── day-09-gold-pricing.md
+│   ├── day-10-oil-new-energy.md
+│   ├── day-11-digital-economy.md
+│   ├── day-12-three-part-method.md
+│   ├── day-13-valuation-cases.md
+│   └── day-14-week2-review.md
+├── week-03/                    # 高级应用与整合思维
+│   ├── day-15-market-cycles.md
+│   ├── day-16-long-term-holding.md
+│   ├── day-17-china-us-dynamics.md
+│   ├── day-18-argentina-japan.md
+│   ├── day-19-ai-investment.md
+│   ├── day-20-six-assets.md
+│   └── day-21-final-framework.md
 ├── flashcards/                 # 复习卡片
 ├── diagrams/                   # 图表源文件
 └── website/                    # PWA课程网站
@@ -118,11 +129,22 @@ open index.html
 3. **记笔记** — 记录你的疑问和洞察
 4. **复习测验** — 每周复习日测试你的理解
 
-## 📖 推荐前置阅读
+## 📖 推荐阅读
 
-- 《经济学》— 萨缪尔森（至少前3章）
+**完整书单（按主题分类）：** [推荐书籍 →](recommended-reading.md)
+
+### 前置阅读（开课前）
+- 《经济学》— 萨缪尔森（至少前3章）——「历史上最牛的一本经济学著作」
 - 《国富论》— 亚当·斯密（了解市场经济基础）
 - 《通往奴役之路》— 哈耶克（理解奥地利学派）
+
+### 伴读推荐（学习过程中）
+- 《了凡四训》— 袁了凡（「第一章你要读100遍」）
+- 《道德经》— 老子（课程中引用最多的经典）
+- 《时运变迁》— 保罗·沃尔克 / 行天丰雄（理解货币博弈）
+- 《芯片战争》— Chris Miller（「看完这本书你就知道芯片是什么东西」）
+- 《石油！石油！》— Leonardo Maugeri（「大家可以买这本书来看一下」）
+- 巴菲特致股东的信（「全部都是这一条——消费现金流」）
 
 ## ⚠️ 重要声明
 
@@ -152,5 +174,5 @@ open index.html
 
 **开始你的学习之旅：** [Day 1: 大师兄的投资哲学全景](week-01/day-01-why-economics.md) →
 
-**当前进度：** Week 1 完成 ✅ | Week 2-3 开发中 🚧
+**当前进度：** Week 1 完成 ✅ | Week 2 完成 ✅ | Week 3 完成 ✅
 
