@@ -1,6 +1,6 @@
 # Day 7: Week 1 复习 — 从历史到今天的底层逻辑
 
-[← 上一课：Day 6](./day-06-monetary-expansion.md) | [课程首页](../README.md) | [下一周：Week 2 →](../week-02/README.md)
+[← 上一课：Day 6](./day-06-monetary-expansion.md) | [课程首页](../README.md) | [下一周：Week 2 →](../week-02/day-08-etf-essentials.md)
 
 ---
 
@@ -205,4 +205,4 @@
 
 ---
 
-[← 上一课：Day 6](./day-06-monetary-expansion.md) | [课程首页](../README.md) | [下一周：Week 2 →](../week-02/README.md)
+[← 上一课：Day 6](./day-06-monetary-expansion.md) | [课程首页](../README.md) | [下一周：Week 2 →](../week-02/day-08-etf-essentials.md)

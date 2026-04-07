@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560">
+<rect width="100%" height="100%" fill="#ffffff" />
+
+<text x="400.0" y="50.599999999999994" fill="#1e1e1e" font-size="36" font-family="system-ui, sans-serif" text-anchor="middle">三分法资产配置金字塔</text>
+<rect x="280" y="100" width="240" height="80" rx="8" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2" />
+<text x="400.0" y="144.95" fill="#c92a2a" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">退休 &amp; 传承</text>
+<rect x="150" y="200" width="500" height="200" rx="8" fill="#fff3bf" stroke="#e67700" stroke-width="2" />
+<text x="400.0" y="234.95" fill="#e67700" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">投资资本</text>
+<rect x="190" y="260" width="130" height="45" rx="8" fill="#ffe8a3" stroke="#e67700" stroke-width="1" />
+<text x="255.0" y="286.1" fill="#1e1e1e" font-size="16" font-family="system-ui, sans-serif" text-anchor="middle">底仓操作</text>
+<rect x="340" y="260" width="130" height="45" rx="8" fill="#ffe8a3" stroke="#e67700" stroke-width="1" />
+<text x="405.0" y="286.1" fill="#1e1e1e" font-size="16" font-family="system-ui, sans-serif" text-anchor="middle">一层加仓</text>
+<rect x="490" y="260" width="130" height="45" rx="8" fill="#ffe8a3" stroke="#e67700" stroke-width="1" />
+<text x="555.0" y="286.1" fill="#1e1e1e" font-size="16" font-family="system-ui, sans-serif" text-anchor="middle">二层加仓</text>
+<text x="400.0" y="348.6" fill="#868e96" font-size="16" font-family="system-ui, sans-serif" text-anchor="middle">根据市场信号逐步加减仓</text>
+<text x="400.0" y="368.6" fill="#868e96" font-size="16" font-family="system-ui, sans-serif" text-anchor="middle">控制风险，分批操作</text>
+<rect x="20" y="420" width="760" height="120" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" />
+<text x="400.0" y="485.4" fill="#2f9e44" font-size="24" font-family="system-ui, sans-serif" text-anchor="middle">生活支出 &amp; 应急基金</text>
+<text x="840.0" y="481.55" fill="#2f9e44" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">安全层</text>
+<text x="710.0" y="301.55" fill="#e67700" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">增长层</text>
+<text x="580.0" y="141.55" fill="#c92a2a" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">传承层</text>
+</svg>

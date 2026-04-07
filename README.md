@@ -53,15 +53,47 @@
 
 ## 🚀 开始学习
 
-### 在线学习（PWA网站）
+### 在线学习
 
-课程网站已构建完成，可直接部署到 GitHub Pages 或任何静态托管服务。支持安装为应用，支持离线访问。
+访问 GitHub Pages 上的 PWA 课程网站（可安装到桌面/手机，支持离线）：
 
-**部署方式：** 将 `website/` 目录部署为 GitHub Pages（Settings → Pages → Source 选择 `main` 分支，目录选 `/website`）。
+```
+https://CeciliaW888.github.io/dashixiong-investment-philosophy/
+```
 
-### 本地阅读
+### 本地学习
 
-浏览 `week-01/`、`week-02/`、`week-03/` 文件夹中的每日学习指南。
+```bash
+# 1. 克隆课程仓库
+git clone https://github.com/CeciliaW888/dashixiong-investment-philosophy.git
+cd dashixiong-investment-philosophy
+
+# 2. 直接打开 Markdown 指南开始学习
+# macOS/Linux:
+open week-01/day-01-why-economics.md
+# Windows:
+start week-01/day-01-why-economics.md
+
+# 3. 或在浏览器中打开课程网站
+# macOS/Linux:
+open website/index.html
+# Windows:
+start website/index.html
+```
+
+### 部署到你自己的 GitHub Pages
+
+1. Fork 本仓库到你的 GitHub 账户
+2. 进入仓库的 **Settings → Pages**
+3. Source 选择 **GitHub Actions**
+4. 推送到 `main` 分支即可自动部署（仓库已包含部署工作流）
+5. 部署完成后访问 `https://<你的用户名>.github.io/dashixiong-investment-philosophy/`
+
+### 安装为 PWA
+
+1. 用 Chrome/Edge 打开课程网站
+2. 点击地址栏右侧的"安装"图标，或页面上的安装提示
+3. 安装后可从桌面/主屏幕直接打开，支持离线访问
 
 ## 📦 仓库结构
 

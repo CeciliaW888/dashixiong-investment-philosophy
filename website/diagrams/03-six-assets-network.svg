@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 765 730" width="765" height="730">
+<rect width="100%" height="100%" fill="#ffffff" />
+<defs>
+<marker id="arrowhead-868e96" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#868e96" /></marker>
+<marker id="arrowhead-1971c2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#1971c2" /></marker>
+<marker id="arrowhead-2f9e44" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#2f9e44" /></marker>
+<marker id="arrowhead-c92a2a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#c92a2a" /></marker>
+<marker id="arrowhead-862e9c" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#862e9c" /></marker>
+<marker id="arrowhead-e67700" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#e67700" /></marker>
+</defs>
+<text x="420.0" y="50.599999999999994" fill="#1e1e1e" font-size="36" font-family="system-ui, sans-serif" text-anchor="middle">六大资产联动系统</text>
+<ellipse cx="380.0" cy="150.0" rx="50.0" ry="50.0" fill="#ffd43b" stroke="#e67700" stroke-width="2" />
+<text x="380.0" y="155.45" fill="#1e1e1e" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">金</text>
+<ellipse cx="590.0" cy="300.0" rx="50.0" ry="50.0" fill="#868e96" stroke="#1e1e1e" stroke-width="2" />
+<text x="590.0" y="305.45" fill="#ffffff" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">油</text>
+<ellipse cx="590.0" cy="510.0" rx="50.0" ry="50.0" fill="#a5d8ff" stroke="#1971c2" stroke-width="2" />
+<text x="590.0" y="515.45" fill="#1e1e1e" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">汇</text>
+<ellipse cx="380.0" cy="660.0" rx="50.0" ry="50.0" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" />
+<text x="380.0" y="665.45" fill="#1e1e1e" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">债</text>
+<ellipse cx="170.0" cy="510.0" rx="50.0" ry="50.0" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2" />
+<text x="170.0" y="515.45" fill="#1e1e1e" font-size="22" font-family="system-ui, sans-serif" text-anchor="middle">股</text>
+<ellipse cx="170.0" cy="300.0" rx="50.0" ry="50.0" fill="#e5dbff" stroke="#862e9c" stroke-width="2" />
+<text x="170.0" y="292.8" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">数字</text>
+<text x="170.0" y="315.3" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">货币</text>
+<line x1="430" y1="170" x2="545" y2="270" stroke="#868e96" stroke-width="2" marker-end="url(#arrowhead-868e96)" />
+<text x="525.0" y="203.15" fill="#868e96" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">油价涨→金涨</text>
+<line x1="590" y1="355" x2="590" y2="455" stroke="#1971c2" stroke-width="2" marker-end="url(#arrowhead-1971c2)" />
+<text x="675.0" y="403.15" fill="#1971c2" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">美元强→黄金弱</text>
+<line x1="535" y1="540" x2="425" y2="630" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrowhead-2f9e44)" />
+<text x="515.0" y="588.15" fill="#2f9e44" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">利率升→债券跌</text>
+<line x1="330" y1="650" x2="215" y2="550" stroke="#c92a2a" stroke-width="2" marker-end="url(#arrowhead-c92a2a)" />
+<text x="265.0" y="603.15" fill="#c92a2a" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">债券跌→股票承压</text>
+<line x1="160" y1="455" x2="150" y2="355" stroke="#862e9c" stroke-width="2" marker-end="url(#arrowhead-862e9c)" />
+<text x="85.0" y="403.15" fill="#862e9c" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">风险偏好联动</text>
+<line x1="220" y1="275" x2="330" y2="175" stroke="#e67700" stroke-width="2" marker-end="url(#arrowhead-e67700)" />
+<text x="300.0" y="213.15" fill="#e67700" font-size="14" font-family="system-ui, sans-serif" text-anchor="middle">数字黄金叙事</text>
+</svg>

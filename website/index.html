@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>大师兄投资哲学</title>
-  <meta name="description" content="跟随大师兄学习投资哲学 — 从经济学底层逻辑到实战策略的7天课程">
+  <meta name="description" content="跟随大师兄学习投资哲学 — 从经济学底层逻辑到实战策略的21天课程">
   <meta name="theme-color" content="#8b5e3c">
 
   <!-- PWA -->
@@ -86,20 +86,24 @@
     .install-btn-hero.visible { display: inline-block; }
 
     /* ── Progress Card ── */
-    .progress-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); padding: 24px; margin: 24px 20px 0; max-width: var(--max-w); margin-inline: auto; }
+    .progress-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); padding: 20px 24px 18px; margin: 16px 20px 0; max-width: var(--max-w); margin-inline: auto; box-shadow: 0 1px 3px var(--shadow); }
     .progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-    .progress-header h3 { font-size: 1rem; font-weight: 600; }
-    .progress-count { color: var(--text-secondary); font-size: 0.9rem; }
-    .progress-track { height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
-    .progress-fill { height: 100%; background: var(--accent); border-radius: 3px; width: 0%; transition: width 0.4s ease; }
-    .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 12px; }
-    .day-dot { aspect-ratio: 1; border-radius: 8px; background: var(--cream); border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: var(--text-muted); transition: all 0.2s; position: relative; }
-    .day-dot:hover { transform: scale(1.1); border-color: var(--accent); }
-    .day-dot.done { background: var(--accent); border-color: var(--accent); color: white; }
-    .day-dot.done::after { content: '✓'; font-size: 16px; position: absolute; }
+    .progress-header h3 { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.02em; }
+    .progress-count { color: var(--accent); font-size: 0.9rem; font-weight: 700; background: var(--accent-muted); padding: 2px 10px; border-radius: 20px; }
+    .progress-track { height: 6px; background: var(--cream); border-radius: 3px; margin-bottom: 18px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-hover)); border-radius: 3px; width: 0%; transition: width 0.4s ease; }
+    .progress-weeks { display: grid; grid-template-columns: auto repeat(7, 1fr); column-gap: 6px; row-gap: 10px; align-items: center; max-width: 420px; margin-inline: auto; }
+    .week-labels { display: contents; }
+    .week-row-label { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); white-space: nowrap; grid-column: 1; padding-right: 8px; }
+    .week-row-label:nth-child(1) { grid-row: 1; }
+    .week-row-label:nth-child(2) { grid-row: 2; }
+    .week-row-label:nth-child(3) { grid-row: 3; }
+    .day-grid { display: contents; }
+    .day-dot { aspect-ratio: 1; max-width: 38px; border-radius: 10px; background: var(--cream); border: 1.5px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); transition: all 0.2s; position: relative; }
+    .day-dot:hover { transform: scale(1.08); border-color: var(--accent); background: var(--accent-muted); }
+    .day-dot.done { background: var(--accent); border-color: var(--accent); color: white; box-shadow: 0 1px 3px rgba(139,94,60,0.3); }
+    .day-dot.done::after { content: '\2713'; font-size: 15px; font-weight: 700; position: absolute; }
     .day-dot.done > span { visibility: hidden; }
-    .week-labels { display: flex; gap: 6px; }
-    .week-labels span { flex: 1; font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: 2px 0; }
 
     /* ── Curriculum Cards ── */
     .week-section { margin-bottom: 32px; }
@@ -122,6 +126,28 @@
     .day-card-body ul { margin: 12px 0 12px 18px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; }
     .day-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.875rem; font-weight: 600; text-decoration: none; padding: 6px 0; }
     .day-link:hover { text-decoration: underline; }
+
+    /* ── Week Sub-Tabs ── */
+    .week-subtabs { display: flex; gap: 0; margin-bottom: 0; border-bottom: 2px solid var(--border); }
+    .week-subtab { flex: 1; padding: 12px 16px; border: none; background: none; color: var(--text-secondary); font-size: 0.88rem; font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+    .week-subtab:hover { color: var(--text-primary); }
+    .week-subtab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+    .week-subtitle { font-size: 0.82rem; color: var(--accent); font-weight: 600; padding: 10px 0 14px; }
+    .week-module-card { background: var(--white); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 8px; overflow: hidden; }
+    .week-module-card-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; cursor: pointer; user-select: none; transition: background 0.15s; }
+    .week-module-card-header:hover { background: var(--accent-muted); }
+    .week-module-card-title { font-weight: 600; font-size: 0.95rem; }
+    .week-module-card .chevron { font-size: 0.8rem; color: var(--text-muted); transition: transform 0.2s; }
+    .week-module-card.open .chevron { transform: rotate(180deg); }
+    .week-module-card-body { display: none; padding: 0 18px 16px; border-top: 1px solid var(--border); }
+    .week-module-card.open .week-module-card-body { display: block; }
+    .week-module-card-body .module-embed { padding-top: 12px; }
+    .module-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0 4px; margin-top: 16px; border-top: 1px solid var(--border); }
+    .module-nav-btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 10px 20px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+    .module-nav-btn:hover { background: var(--accent-hover); }
+    .module-nav-btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .module-nav-btn.secondary:hover { background: var(--accent-muted); }
+    .module-nav-btn:disabled { opacity: 0.3; cursor: default; }
 
     /* ── Module overrides (embedded in tab, not full-viewport) ── */
     .module { min-height: auto !important; padding: 32px 0; border-bottom: 1px solid var(--border); }
@@ -153,9 +179,18 @@
 
     /* ── Diagrams ── */
     .diagram-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .diagram-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .diagram-card { background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+    .diagram-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
     .diagram-card img { width: 100%; height: 200px; object-fit: contain; background: white; padding: 12px; }
     .diagram-label { padding: 12px 16px; font-weight: 600; font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+    /* ── Lightbox ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; flex-direction: column; padding: 24px; }
+    .lightbox.open { display: flex; }
+    .lightbox-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.15s; }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox img { max-width: 95vw; max-height: 80vh; object-fit: contain; background: white; border-radius: 8px; padding: 20px; }
+    .lightbox-title { color: white; font-size: 1rem; font-weight: 600; margin-top: 16px; text-align: center; }
 
     /* ── Resources ── */
     .resource-group { margin-bottom: 32px; }
@@ -191,12 +226,12 @@
 <div class="hero">
   <div class="hero-emoji">📈</div>
   <h1>大师兄投资哲学</h1>
-  <p class="hero-subtitle">从经济学底层逻辑到投资实战 — 7天系统学习</p>
+  <p class="hero-subtitle">从经济学底层逻辑到投资实战 — 21天系统学习</p>
   <div class="hero-tags">
     <span class="hero-tag">经济学基础</span>
     <span class="hero-tag">货币理论</span>
     <span class="hero-tag">投资哲学</span>
-    <span class="hero-tag">7天课程</span>
+    <span class="hero-tag">21天课程</span>
   </div>
   <button class="install-btn-hero" id="install-btn-hero">📲 安装应用</button>
 </div>
@@ -205,11 +240,17 @@
 <div class="progress-card">
   <div class="progress-header">
     <h3>学习进度</h3>
-    <span class="progress-count" id="progress-text">0 / 7 天</span>
+    <span class="progress-count" id="progress-text">0 / 21 天</span>
   </div>
   <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
-  <div class="day-grid" id="day-grid"></div>
-  <div class="week-labels"><span>Day 1</span><span>Day 2</span><span>Day 3</span><span>Day 4</span><span>Day 5</span><span>Day 6</span><span>Day 7</span></div>
+  <div class="progress-weeks">
+    <div class="week-labels">
+      <span class="week-row-label">第一周</span>
+      <span class="week-row-label">第二周</span>
+      <span class="week-row-label">第三周</span>
+    </div>
+    <div class="day-grid" id="day-grid"></div>
+  </div>
 </div>
 
 <main>
@@ -235,7 +276,7 @@
             <li>掌握「底层逻辑」概念</li>
             <li>了解大师兄投资体系全貌</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(1); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -253,7 +294,7 @@
             <li>理解经济周期的底层驱动力</li>
             <li>从历史中看投资逻辑</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(2); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -271,7 +312,7 @@
             <li>全球贸易体系的形成</li>
             <li>贸易与财富积累的关系</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(3); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -289,7 +330,7 @@
             <li>政策对市场的影响机制</li>
             <li>投资者如何应对政策变化</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(4); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -307,7 +348,7 @@
             <li>凯恩斯主义的逻辑框架</li>
             <li>两大学派对投资的启示</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(5); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -325,7 +366,7 @@
             <li>央行政策对资产价格的影响</li>
             <li>通胀环境下的投资策略</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(6); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -343,7 +384,269 @@
             <li>知识点串联与总结</li>
             <li>自测与反思</li>
           </ul>
-          <a class="day-link" href="#" onclick="document.getElementById('tab-modules').click(); return false;">📖 开始学习 →</a>
+          <a class="day-link" href="#" onclick="goToDay(7); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-section">
+      <h3>📅 第二周：资产类别与估值方法</h3>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 8: ETF的本质</span>
+          <div class="day-card-meta">
+            <span class="day-type type-foundations">基础</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>理解ETF的运作机制</li>
+            <li>ETF与主动基金的对比</li>
+            <li>如何选择适合的ETF</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(8); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 9: 黄金的定价逻辑</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>黄金作为避险资产的逻辑</li>
+            <li>黄金定价的核心因素</li>
+            <li>黄金在投资组合中的角色</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(9); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 10: 石油与新能源的博弈</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>石油定价机制与地缘政治</li>
+            <li>新能源对传统能源的冲击</li>
+            <li>能源转型中的投资机会</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(10); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 11: 数字经济与数字货币</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>数字经济的底层逻辑</li>
+            <li>数字货币与传统货币的关系</li>
+            <li>区块链技术的投资含义</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(11); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 12: 三分法资产配置</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>三分法配置的核心理念</li>
+            <li>不同资产类别的相关性</li>
+            <li>构建稳健的投资组合</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(12); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 13: 估值案例分析</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>实际案例中的估值方法</li>
+            <li>如何判断资产是否被低估</li>
+            <li>估值陷阱与常见误区</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(13); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 14: 第二周回顾</span>
+          <div class="day-card-meta">
+            <span class="day-type type-review">复习</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>回顾资产类别核心知识</li>
+            <li>估值方法串联与总结</li>
+            <li>自测与反思</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(14); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="week-section">
+      <h3>📅 第三周：实战策略与终极框架</h3>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 15: 市场周期与资产负债表</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>市场周期的识别方法</li>
+            <li>资产负债表分析框架</li>
+            <li>周期中的投资策略</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(15); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 16: 长期持有的智慧</span>
+          <div class="day-card-meta">
+            <span class="day-type type-concepts">概念</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>长期投资的心理基础</li>
+            <li>复利效应与时间的力量</li>
+            <li>如何坚持长期持有</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(16); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 17: 中美博弈与全球配置</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>中美经济博弈的格局</li>
+            <li>全球化与去全球化趋势</li>
+            <li>全球资产配置策略</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(17); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 18: 从阿根廷到日本</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>阿根廷经济危机的教训</li>
+            <li>日本失去的三十年</li>
+            <li>国别案例对投资的启示</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(18); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 19: AI时代的投资逻辑</span>
+          <div class="day-card-meta">
+            <span class="day-type type-advanced">进阶</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>AI对各行业的颠覆性影响</li>
+            <li>AI时代的投资机会与风险</li>
+            <li>如何布局AI相关资产</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(19); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 20: 金油汇债股数字货币</span>
+          <div class="day-card-meta">
+            <span class="day-type type-project">实战</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>六大资产类别的联动关系</li>
+            <li>宏观视角下的资产轮动</li>
+            <li>构建全方位投资视野</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(20); return false;">📖 开始学习 →</a>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-card-header">
+          <span class="day-card-title">Day 21: 终极框架整合</span>
+          <div class="day-card-meta">
+            <span class="day-type type-project">实战</span>
+            <span class="chevron">▼</span>
+          </div>
+        </div>
+        <div class="day-card-body">
+          <ul>
+            <li>整合21天所学知识</li>
+            <li>构建个人投资框架</li>
+            <li>制定行动计划</li>
+          </ul>
+          <a class="day-link" href="#" onclick="goToDay(21); return false;">📖 开始学习 →</a>
         </div>
       </div>
 
@@ -352,6 +655,12 @@
 
   <!-- ── 2. Learning Content ── -->
   <section class="section container" id="section-modules" aria-labelledby="tab-modules">
+    <div class="week-subtabs" id="week-subtabs">
+      <button class="week-subtab active" data-week="1" onclick="switchWeek(1)">第一周</button>
+      <button class="week-subtab" data-week="2" onclick="switchWeek(2)">第二周</button>
+      <button class="week-subtab" data-week="3" onclick="switchWeek(3)">第三周</button>
+    </div>
+    <div class="week-subtitle" id="week-subtitle">第一周：经济学底层逻辑</div>
     <div id="modules-container"></div>
     <div class="empty-state" id="modules-loading">加载中…</div>
   </section>
@@ -389,13 +698,35 @@
     </div>
   </section>
 
+  <!-- ── Lightbox ── -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-title" id="lightbox-title"></div>
+  </div>
+
 </main>
 
 <script>
 /* ── Configuration ── */
-const DAY_COUNT    = 7;
-const MODULE_FILES = ['modules/01-why-economics.html','modules/02-historical-pricing.html','modules/03-great-navigation.html','modules/04-capital-government.html','modules/05-austrian-vs-keynesian.html','modules/06-monetary-expansion.html','modules/07-week1-review.html'];
-const DIAGRAM_FILES = [];
+const DAY_COUNT    = 21;
+const MODULE_FILES = [
+  'modules/01-why-economics.html','modules/02-historical-pricing.html','modules/03-great-navigation.html',
+  'modules/04-capital-government.html','modules/05-austrian-vs-keynesian.html','modules/06-monetary-expansion.html',
+  'modules/07-week1-review.html','modules/08-etf-essentials.html','modules/09-gold-pricing.html',
+  'modules/10-oil-new-energy.html','modules/11-digital-economy.html','modules/12-three-part-method.html',
+  'modules/13-valuation-cases.html','modules/14-week2-review.html','modules/15-market-cycles.html',
+  'modules/16-long-term-holding.html','modules/17-china-us-dynamics.html','modules/18-argentina-japan.html',
+  'modules/19-ai-investment.html','modules/20-six-assets.html','modules/21-final-framework.html'
+];
+const DIAGRAM_FILES = [
+  { file: 'diagrams/01-monetary-evolution.svg', title: '货币进化与权力转移', desc: '从实物货币到数字货币的千年演变' },
+  { file: 'diagrams/02-gold-five-contradictions.svg', title: '五大矛盾与黄金定价', desc: '黄金定价的五大核心矛盾体系' },
+  { file: 'diagrams/03-six-assets-network.svg', title: '六大资产联动系统', desc: '金油汇债股数字货币的联动关系' },
+  { file: 'diagrams/04-three-part-method.svg', title: '三分法资产配置金字塔', desc: '从生活到投资到退休的配置架构' },
+  { file: 'diagrams/05-policy-vs-real-bull.svg', title: '政策牛vs真牛识别框架', desc: '区分政策刺激与真实经济牛市' },
+  { file: 'diagrams/06-china-us-financial.svg', title: '中美金融延展性对比', desc: '中美金融工具竞争与全球配置策略' }
+];
 const STORAGE_KEY  = 'dashixiong-investment-progress';
 
 /* ── Tab switching ── */
@@ -451,33 +782,154 @@ document.querySelectorAll('.day-card-header').forEach(h => {
   h.addEventListener('click', () => h.closest('.day-card').classList.toggle('open'));
 });
 
-/* ── Lazy-load modules ── */
+/* ── Week-based module loading ── */
+const WEEK_NAMES = { 1: '第一周：经济学底层逻辑', 2: '第二周：资产类别与估值方法', 3: '第三周：实战策略与终极框架' };
+const WEEK_RANGES = { 1: [0,7], 2: [7,14], 3: [14,21] };
+const MODULE_TITLES = [
+  'Day 1: 大师兄的投资哲学全景','Day 2: 历史定价权与经济周期','Day 3: 大航海时代与全球贸易',
+  'Day 4: 资本与政府的博弈','Day 5: 奥派 vs 凯恩斯','Day 6: 货币扩张与通胀','Day 7: 第一周复盘',
+  'Day 8: ETF的本质','Day 9: 黄金的定价逻辑','Day 10: 石油与新能源的博弈',
+  'Day 11: 数字经济与数字货币','Day 12: 三分法资产配置','Day 13: 估值案例分析','Day 14: 第二周回顾',
+  'Day 15: 市场周期与资产负债表','Day 16: 长期持有的智慧','Day 17: 中美博弈与全球配置',
+  'Day 18: 从阿根廷到日本','Day 19: AI时代的投资逻辑','Day 20: 金油汇债股数字货币','Day 21: 终极框架整合'
+];
+let currentWeek = 1;
+const moduleCache = {};
+
 async function loadModules() {
+  await switchWeek(1);
+}
+
+async function switchWeek(week) {
+  currentWeek = week;
+  document.querySelectorAll('.week-subtab').forEach(t => t.classList.toggle('active', parseInt(t.dataset.week) === week));
+  document.getElementById('week-subtitle').textContent = WEEK_NAMES[week];
   const container = document.getElementById('modules-container');
   const loading   = document.getElementById('modules-loading');
-  for (const file of MODULE_FILES) {
-    try {
-      const resp = await fetch(file);
-      if (resp.ok) {
-        const div = document.createElement('div');
-        div.innerHTML = await resp.text();
-        container.appendChild(div);
-      }
-    } catch(e) { console.warn('Failed to load', file); }
+  container.innerHTML = '';
+  loading.style.display = 'block';
+
+  const [start, end] = WEEK_RANGES[week];
+  for (let i = start; i < end; i++) {
+    const card = document.createElement('div');
+    card.className = 'week-module-card';
+    card.id = 'module-card-' + (i + 1);
+    card.innerHTML = `
+      <div class="week-module-card-header" onclick="this.parentElement.classList.toggle('open'); loadModuleContent(${i}, this.parentElement);">
+        <span class="week-module-card-title">${MODULE_TITLES[i]}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="week-module-card-body">
+        <div class="module-embed" id="module-embed-${i}"><p class="empty-state" style="padding:12px 0;">点击展开加载内容…</p></div>
+      </div>`;
+    container.appendChild(card);
   }
   loading.style.display = 'none';
-  if (typeof initIndexQuizzes === 'function') initIndexQuizzes();
-  if (typeof initChatWindows === 'function') initChatWindows();
-  container.querySelectorAll('pre').forEach(pre => {
-    const btn = document.createElement('button');
-    btn.textContent = '复制'; btn.className = 'copy-btn-overlay';
-    btn.addEventListener('click', () => {
-      navigator.clipboard.writeText((pre.querySelector('code') || pre).textContent);
-      btn.textContent = '已复制!';
-      setTimeout(() => { btn.textContent = '复制'; }, 2000);
-    });
-    pre.style.position = 'relative'; pre.appendChild(btn);
-  });
+}
+
+async function loadModuleContent(idx, card) {
+  const embed = document.getElementById('module-embed-' + idx);
+  if (embed.dataset.loaded) return;
+  embed.innerHTML = '<p class="empty-state" style="padding:12px 0;">加载中…</p>';
+  try {
+    const resp = await fetch(MODULE_FILES[idx], { redirect: 'follow' });
+    const text = await resp.text();
+    if (text && text.trim().length > 0) {
+      embed.innerHTML = text;
+      embed.dataset.loaded = '1';
+      // Fix inline quizzes — add answer reveal on click
+      embed.querySelectorAll('.quiz-card').forEach(card => {
+        card.querySelectorAll('.quiz-option').forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (card.dataset.answered) return;
+            card.dataset.answered = '1';
+            const isCorrect = btn.dataset.correct === 'true';
+            btn.classList.add(isCorrect ? 'correct' : 'incorrect');
+            if (!isCorrect) {
+              card.querySelectorAll('.quiz-option[data-correct="true"]').forEach(b => b.classList.add('correct'));
+            }
+            const explanation = isCorrect
+              ? (btn.dataset.explanationCorrect || '✓ 正确!')
+              : (btn.dataset.explanationWrong || '✗ 错误。');
+            const exp = document.createElement('div');
+            exp.className = 'quiz-explanation visible';
+            exp.textContent = explanation;
+            card.appendChild(exp);
+            card.querySelectorAll('.quiz-option').forEach(b => b.style.pointerEvents = 'none');
+          });
+        });
+      });
+      // Fix flashcards: add inner wrapper, click handler, and height
+      embed.querySelectorAll('.flashcard').forEach(fc => {
+        if (!fc.querySelector('.flashcard-inner')) {
+          const inner = document.createElement('div');
+          inner.className = 'flashcard-inner';
+          while (fc.firstChild) inner.appendChild(fc.firstChild);
+          fc.appendChild(inner);
+        }
+        fc.addEventListener('click', () => fc.classList.toggle('flipped'));
+        // Force white text on back side by removing inline color styles
+        const back = fc.querySelector('.flashcard-back');
+        if (back) back.querySelectorAll('*').forEach(el => el.style.color = '');
+        // Measure front content to set explicit height (absolute children need it)
+        const front = fc.querySelector('.flashcard-front');
+        if (front) {
+          front.style.position = 'relative';
+          const h = Math.max(200, front.scrollHeight + 32);
+          front.style.position = '';
+          fc.style.height = h + 'px';
+        }
+      });
+      // Add prev/next navigation
+      const nav = document.createElement('div');
+      nav.className = 'module-nav';
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'module-nav-btn secondary';
+      prevBtn.textContent = '← 上一天';
+      prevBtn.disabled = idx === 0;
+      prevBtn.addEventListener('click', () => goToDay(idx));
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'module-nav-btn';
+      nextBtn.textContent = '下一天 →';
+      nextBtn.disabled = idx >= 20;
+      nextBtn.addEventListener('click', () => goToDay(idx + 2));
+      nav.appendChild(prevBtn);
+      nav.appendChild(nextBtn);
+      embed.appendChild(nav);
+
+      if (typeof initIndexQuizzes === 'function') initIndexQuizzes();
+      if (typeof initChatWindows === 'function') initChatWindows();
+      embed.querySelectorAll('pre').forEach(pre => {
+        const btn = document.createElement('button');
+        btn.textContent = '复制'; btn.className = 'copy-btn-overlay';
+        btn.addEventListener('click', () => {
+          navigator.clipboard.writeText((pre.querySelector('code') || pre).textContent);
+          btn.textContent = '已复制!';
+          setTimeout(() => { btn.textContent = '复制'; }, 2000);
+        });
+        pre.style.position = 'relative'; pre.appendChild(btn);
+      });
+    } else {
+      embed.innerHTML = '<p class="empty-state">内容为空</p>';
+    }
+  } catch(e) { console.error('Module load error:', e); embed.innerHTML = '<p class="empty-state">加载失败: ' + e.message + '</p>'; }
+}
+
+/* ── Navigate to specific day from curriculum ── */
+function goToDay(dayNum) {
+  const week = dayNum <= 7 ? 1 : dayNum <= 14 ? 2 : 3;
+  document.getElementById('tab-modules').click();
+  setTimeout(async () => {
+    if (currentWeek !== week) await switchWeek(week);
+    setTimeout(() => {
+      const card = document.getElementById('module-card-' + dayNum);
+      if (card) {
+        card.classList.add('open');
+        loadModuleContent(dayNum - 1, card);
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }, 50);
 }
 
 /* ── Flashcards ── */
@@ -539,11 +991,25 @@ async function loadQuiz() {
 function renderDiagrams() {
   const grid = document.getElementById('diagram-grid');
   if (grid.children.length > 0) return;
-  if (!DIAGRAM_FILES.length) { grid.innerHTML = '<p class="empty-state">暂无图解 — 添加 SVG 到 website/diagrams/</p>'; return; }
-  DIAGRAM_FILES.forEach(f => {
-    const label = f.replace(/.*\//, '').replace(/\.[^.]+$/, '').replace(/-/g, ' ');
-    grid.innerHTML += `<div class="diagram-card"><img src="${f}" alt="${label}" loading="lazy"><div class="diagram-label">${label}</div></div>`;
+  if (!DIAGRAM_FILES.length) { grid.innerHTML = '<p class="empty-state">暂无图解</p>'; return; }
+  DIAGRAM_FILES.forEach(d => {
+    const card = document.createElement('div');
+    card.className = 'diagram-card';
+    card.innerHTML = `<img src="${d.file}" alt="${d.title}" loading="lazy"><div class="diagram-label">${d.title}</div>`;
+    card.addEventListener('click', () => openLightbox(d.file, d.title));
+    grid.appendChild(card);
   });
+}
+
+function openLightbox(src, title) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-title').textContent = title;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 /* ── PWA install prompt ── */

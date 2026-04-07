@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 825" width="920" height="825">
+<rect width="100%" height="100%" fill="#ffffff" />
+<defs>
+<marker id="arrowhead-1e1e1e" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#1e1e1e" /></marker>
+<marker id="arrowhead-c92a2a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#c92a2a" /></marker>
+<marker id="arrowhead-2f9e44" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#2f9e44" /></marker>
+</defs>
+<text x="515.0" y="50.599999999999994" fill="#1e1e1e" font-size="36" font-family="system-ui, sans-serif" text-anchor="middle">政策牛 vs 真牛识别框架</text>
+<rect x="400" y="100" width="200" height="60" rx="8" fill="#a5d8ff" stroke="#1971c2" stroke-width="2" />
+<text x="500.0" y="135.0" fill="#1e1e1e" font-size="20" font-family="system-ui, sans-serif" text-anchor="middle">市场上涨</text>
+<line x1="500" y1="165" x2="500" y2="215" stroke="#1e1e1e" stroke-width="2" marker-end="url(#arrowhead-1e1e1e)" />
+<polygon points="500.0,220 660,280.0 500.0,340 340,280.0" fill="#d0ebff" stroke="#1971c2" stroke-width="2" />
+<text x="500.0" y="272.8" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">货币是否传导</text>
+<text x="500.0" y="295.3" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">到实体经济？</text>
+<line x1="340" y1="280" x2="220" y2="360" stroke="#c92a2a" stroke-width="2" marker-end="url(#arrowhead-c92a2a)" />
+<text x="270.0" y="307.0" fill="#c92a2a" font-size="20" font-family="system-ui, sans-serif" text-anchor="middle">否</text>
+<line x1="660" y1="280" x2="780" y2="360" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrowhead-2f9e44)" />
+<text x="720.0" y="307.0" fill="#2f9e44" font-size="20" font-family="system-ui, sans-serif" text-anchor="middle">是</text>
+<text x="140.0" y="390.4" fill="#c92a2a" font-size="24" font-family="system-ui, sans-serif" text-anchor="middle">政策牛路径</text>
+<rect x="20" y="420" width="220" height="55" rx="8" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2" />
+<text x="130.0" y="451.55" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">资金停留金融体系</text>
+<line x1="130" y1="480" x2="130" y2="520" stroke="#c92a2a" stroke-width="2" marker-end="url(#arrowhead-c92a2a)" />
+<rect x="20" y="530" width="220" height="55" rx="8" fill="#ffc9c9" stroke="#c92a2a" stroke-width="2" />
+<text x="130.0" y="561.55" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">散户追涨</text>
+<line x1="130" y1="590" x2="130" y2="630" stroke="#c92a2a" stroke-width="2" marker-end="url(#arrowhead-c92a2a)" />
+<rect x="20" y="640" width="220" height="55" rx="8" fill="#ff8787" stroke="#c92a2a" stroke-width="2" />
+<text x="130.0" y="672.0" fill="#ffffff" font-size="20" font-family="system-ui, sans-serif" text-anchor="middle">被收割</text>
+<text x="790.0" y="390.4" fill="#2f9e44" font-size="24" font-family="system-ui, sans-serif" text-anchor="middle">真牛市路径</text>
+<rect x="680" y="420" width="220" height="55" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" />
+<text x="790.0" y="451.55" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">企业盈利改善</text>
+<line x1="790" y1="480" x2="790" y2="520" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrowhead-2f9e44)" />
+<rect x="680" y="530" width="220" height="55" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" />
+<text x="790.0" y="561.55" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">就业恢复</text>
+<line x1="790" y1="590" x2="790" y2="630" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrowhead-2f9e44)" />
+<rect x="680" y="640" width="220" height="55" rx="8" fill="#b2f2bb" stroke="#2f9e44" stroke-width="2" />
+<text x="790.0" y="671.55" fill="#1e1e1e" font-size="18" font-family="system-ui, sans-serif" text-anchor="middle">消费回暖</text>
+<line x1="790" y1="700" x2="790" y2="740" stroke="#2f9e44" stroke-width="2" marker-end="url(#arrowhead-2f9e44)" />
+<rect x="680" y="750" width="220" height="55" rx="8" fill="#69db7c" stroke="#2f9e44" stroke-width="2" />
+<text x="790.0" y="782.0" fill="#1e1e1e" font-size="20" font-family="system-ui, sans-serif" text-anchor="middle">可持续上涨</text>
+</svg>
