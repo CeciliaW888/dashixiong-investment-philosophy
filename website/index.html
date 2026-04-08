@@ -70,8 +70,8 @@
 
     /* ── Layout ── */
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
-    .section { display: none; padding: 32px 0 64px; }
-    .section.active { display: block; }
+    main > .section { display: none; padding: 32px 0 64px; }
+    main > .section.active { display: block; }
     .section-heading { font-family: 'Noto Serif SC', serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
 
     /* ── Hero ── */
@@ -213,8 +213,7 @@
 <!-- ── Tab Nav ── -->
 <nav class="tab-nav" aria-label="课程导航">
   <div class="tab-nav-inner">
-    <button class="tab-btn active" data-tab="curriculum"  id="tab-curriculum">📋 课程大纲</button>
-    <button class="tab-btn"        data-tab="modules"     id="tab-modules">📖 学习内容</button>
+    <button class="tab-btn active" data-tab="modules"     id="tab-modules">📖 学习内容</button>
     <button class="tab-btn"        data-tab="diagrams"    id="tab-diagrams">🗺 图解</button>
     <button class="tab-btn"        data-tab="flashcards"  id="tab-flashcards">🃏 闪卡</button>
     <button class="tab-btn"        data-tab="quiz"        id="tab-quiz">✅ 测验</button>
@@ -654,7 +653,7 @@
   </section>
 
   <!-- ── 2. Learning Content ── -->
-  <section class="section container" id="section-modules" aria-labelledby="tab-modules">
+  <section class="section active container" id="section-modules" aria-labelledby="tab-modules">
     <div class="week-subtabs" id="week-subtabs">
       <button class="week-subtab active" data-week="1" onclick="switchWeek(1)">第一周</button>
       <button class="week-subtab" data-week="2" onclick="switchWeek(2)">第二周</button>
@@ -833,6 +832,7 @@ async function loadModuleContent(idx, card) {
   embed.innerHTML = '<p class="empty-state" style="padding:12px 0;">加载中…</p>';
   try {
     const resp = await fetch(MODULE_FILES[idx], { redirect: 'follow' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
     const text = await resp.text();
     if (text && text.trim().length > 0) {
       embed.innerHTML = text;
